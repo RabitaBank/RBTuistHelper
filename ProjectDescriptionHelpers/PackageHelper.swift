@@ -76,7 +76,6 @@ private func cloneRabitaRepoIfNeeded(repoName: String, destinationPath: String) 
         "clone",
         "--branch",
         "master",
-        "--single-branch",
         "https://github.com/RabitaBank/\(repoName).git",
         destinationPath,
     ]

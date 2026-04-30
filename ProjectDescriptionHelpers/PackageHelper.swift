@@ -20,7 +20,8 @@ public extension Package {
     static func rbPackage(
         _ repoName: String,
         localRepoRoot: String,
-        mode: RBPackageMode = .auto
+        mode: RBPackageMode = .auto,
+        branch: String? = nil
     ) -> Package {
         let prefersLocal: Bool = {
             switch mode {
@@ -50,7 +51,7 @@ public extension Package {
 
         return .package(
             url: "https://github.com/RabitaBank/\(repoName).git",
-            .branch("master")
+            .branch(branch ?? "master")
         )
     }
 }
